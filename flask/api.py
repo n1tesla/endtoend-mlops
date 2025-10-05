@@ -38,8 +38,6 @@ def create_item():
         "id": items[-1]["id"] + 1 if items else 1,
         "name":request.json['name'],
         "description":request.json["description"]
-
-
     }
     items.append(new_item)
     return jsonify(new_item)
@@ -60,8 +58,6 @@ def delete_item(item_id):
     global items
     items = [item for item in items if item["id"] != item_id]
     return jsonify({"result": "Item deleted"})
-
-
 
 
 if __name__ == '__main__':
